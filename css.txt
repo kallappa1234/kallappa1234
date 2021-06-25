@@ -1,0 +1,36 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class CSSselector {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.gecko.driver", "D:\\selenium\\jars\\geckodriver.exe");
+		WebDriver driver= new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("http://www.facebook.com");
+		//id attribute value
+		driver.findElement(By.cssSelector("input#email")).sendKeys("hi");
+        //class attribute value
+		driver.findElement(By.cssSelector("input.inputtext")).sendKeys("buy");
+		//single attribute
+		driver.findElement(By.cssSelector("input[id='pass']")).sendKeys("buybuy");
+		//multiple attribute
+		driver.findElement(By.cssSelector("input[name='pass'][type='password']")).sendKeys("buy");
+		//ends with
+		driver.findElement(By.cssSelector("button[name$=gin]")).click();
+		//starts with
+		driver.findElement(By.cssSelector("button[name^=log]")).click();
+		//contains
+		driver.findElement(By.cssSelector("button[name*=log]")).click();
+		
+	
+
+}
+
+
+
+	}
+
+
